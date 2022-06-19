@@ -18,8 +18,9 @@ export async function getAllQuotes() {
         id: key,
         ...data[key],
       };
-
-      transformedQuotes.push(quoteObj);
+      if (quoteObj.id !== "comments") {
+        transformedQuotes.push(quoteObj);
+      }
     }
 
     return transformedQuotes;

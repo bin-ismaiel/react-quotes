@@ -9,12 +9,18 @@ export default function MainNavigation() {
       <nav className={nav}>
         <ul>
           <li>
-            <NavLink activeClassName={active} to="/quotes">
+            <NavLink
+              className={(navData) => (navData.isActive ? active : "")}
+              to="/quotes"
+            >
               Quotes
             </NavLink>
           </li>
           <li>
-            <NavLink activeClassName={active} to="/new-quote">
+            <NavLink
+              className={(navData) => (navData.isActive ? active : "")}
+              to="/new-quote"
+            >
               Add a Quote
             </NavLink>
           </li>
